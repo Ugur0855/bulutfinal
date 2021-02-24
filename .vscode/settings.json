@@ -1,0 +1,28 @@
+{
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        ".",
+        "-p",
+        "test*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.nosetestArgs": [
+        "static"
+    ],
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "test",
+            "database": "C:\\Users\\ugur_\\movies.sqlite"
+        }
+    ],
+    "sqltools.useNodeRuntime": true,
+    "python.testing.promptToConfigure": false
+}
