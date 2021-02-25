@@ -24,7 +24,7 @@ class Database:
         with dbapi2.connect(self.dbfile) as connection:
             cursor = connection.cursor()
             query = "UPDATE exam SET examname = ?, numberofquestions = ? , question = ? , a = ? , b = ? , c = ? , d = ? , e = ? WHERE (examno = ?)"
-            cursor.execute(query, (exam.title, exam.year, exam_key))
+            cursor.execute(query, (exam.examname, exam.numberofquestions, exam.question, exam.a, exam.b, exam.c, exam.d, exam.e, exam_key))
             connection.commit()
 
     def delete_exam(self, exam_key):
