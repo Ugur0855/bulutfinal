@@ -13,7 +13,6 @@ class Database:
     def add_exam(self, exam):
         with dbapi2.connect(self.dbfile) as connection:
             cursor = connection.cursor()
-            #query = "INSERT INTO MOVIE (TITLE, YR) VALUES (?, ?)"
             query = "INSERT INTO exam (examname, numberofquestions, question, a, b, c, d, e) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
             cursor.execute(query, (exam.examname, exam.numberofquestions, exam.question, exam.a, exam.b, exam.c, exam.d, exam.e))
             connection.commit()

@@ -7,17 +7,7 @@ from datetime import datetime
 
 #examno, examname, numberofquestions, question, a, b, c, d, e
 class ExamEditForm(FlaskForm):
-    '''
-    title = StringField("Title", validators=[DataRequired()])
 
-    year = IntegerField(
-        "Year",
-        validators=[
-            Optional(),
-            NumberRange(min=1887, max=datetime.now().year),
-        ],
-    )
-    '''
     examname = StringField("Examname", validators=[DataRequired()])
     question = StringField("Question", validators=[DataRequired()])
     a = StringField("a", validators=[DataRequired()])
