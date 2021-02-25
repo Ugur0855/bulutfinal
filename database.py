@@ -4,6 +4,7 @@ from exam import Exam
 
 '''
 INSERT INTO exam (examno, examname, numberofquestions, question, a, b, c, d, e) VALUES ("3", "Software Exam", 5, "SoftwareQuestion1content", "SoftwareQuestion1a", "SoftwareQuestion1b", "SoftwareQuestion1c", "SoftwareQuestion1d", "SoftwareQuestion1e");
+
 '''
 
 class Database:
