@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block title %}Exam{% endblock %}
+{% block content %}
+    <h1 class="title">Exam</h1>
+
+    <table class="table">
+
+      <tr>
+        <th>Exam Name:</th>
+        <td>{{ exam.examname }}</td>
+      </tr>
+
+      <tr>
+        <th>Number of questions:</th>
+        <td>{{ exam.numberofquestions }}</td>
+      </tr>
+
+      <tr>
+        <th>Questions:</th>
+        <td>{{ exam.question }}</td>
+      </tr>
+
+    </table>
+
+
+    <form>
+      <div class="question">
+          <p><strong>Q1</strong>: {{ exam.question }}</p>
+          <label>
+              <input type="radio" name="one" value="a">{{ exam.a }} Answer A
+          </label>
+          <br>
+          <label>
+              <input type="radio" name="one" value="b">{{ exam.b }} Answer B
+          </label>
+          <br>
+          <label>
+              <input type="radio" name="one" value="c">{{ exam.c }} Answer C
+          </label>
+          <br>
+          <label>
+              <input type="radio" name="one" value="d">{{ exam.d }} Answer D
+          </label>
+          <br>
+          <label>
+              <input type="radio" name="one" value="d">{{ exam.d }} Answer E
+          </label>
+          <br>
+      </div>
+      <input type="submit" />
+  </form>
+
+  {% if current_user.is_admin %}
+    <div class="field is-grouped">
+      <div class="control">
+        <a class="button is-primary is-outlined is-small"
+           href="{{ request.path }}/edit">Edit</a>
+      </div>
+    </div>
+    {% endif %}
+{% endblock %}

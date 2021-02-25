@@ -1,22 +1,21 @@
 {% extends "layout.html" %}
-{% block title %}Movie list{% endblock %}
+{% block title %}Exam list{% endblock %}
 {% block content %}
-    <h1 class="title">Movies</h1>
+    <h1 class="title">Exams</h1>
 
-    {% if movies %}
-    <form action="" method="post" name="movie_list">
+    {% if exams %}
+    <form action="" method="post" name="exam_list">
       <table class="table is-striped is-fullwidth">
-        {% for movie_key, movie in movies %}
+        {% for exam_key, exam in exams %}
         <tr>
           <td>
             {% if current_user.is_admin %}
             <label class="checkbox">
-              <input type="checkbox" name="movie_keys" value="{{ movie_key }}"/>
+              <input type="checkbox" name="exam_keys" value="{{ exam_key }}"/>
             </label>
             {% endif %}
-            <a href="{{ url_for('movie_page', movie_key=movie_key) }}">
-              {{ movie.title }}
-              {% if movie.year %} ({{ movie.year }}) {% endif %}
+            <a href="{{ url_for('exam_page', exam_key=exam_key) }}">
+              {{ exam.examname }}-{{ exam.question }}
             </a>
           </td>
         </tr>

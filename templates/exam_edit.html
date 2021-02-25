@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% block title %}Edit exam{% endblock %}
+{% block content %}
+    <h1 class="title">Edit exam</h1>
+
+    <form action="" method="post" name="exam_edit">
+      {{ form.csrf_token }}
+
+      <div class="field">
+        <label for="examname" class="label">Exam name</label>
+        <div class="control">
+          {{ form.examname(required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.examname.errors %}
+        <p class="help has-background-warning">
+            {{ error }}
+        </p>
+        {% endfor %}
+      </div>
+
+      <div class="field">
+        <label for="numberofquestions" class="label">Number Of Questions</label>
+        <div class="control">
+          {{ form.numberofquestions(required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.numberofquestions.errors %}
+        <p class="help has-background-warning">
+            {{ error }}
+        </p>
+        {% endfor %}
+      </div>
+
+      <div class="field">
+        <label for="question" class="label">Question</label>
+        <div class="control">
+          {{ form.question(required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.question.errors %}
+        <p class="help has-background-warning">
+            {{ error }}
+        </p>
+        {% endfor %}
+      </div>
+
+      <div class="field">
+        <label for="a" class="label">Answer A</label>
+        <div class="control">
+          {{ form.a(required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.a.errors %}
+        <p class="help has-background-warning">
+            {{ error }}
+        </p>
+        {% endfor %}
+      </div>
+
+      <div class="field">
+        <label for="b" class="label">Answer B</label>
+        <div class="control">
+          {{ form.b(required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.b.errors %}
+        <p class="help has-background-warning">
+            {{ error }}
+        </p>
+        {% endfor %}
+      </div>
+
+      <div class="field">
+        <label for="c" class="label">Answer C</label>
+        <div class="control">
+          {{ form.c(required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.c.errors %}
+        <p class="help has-background-warning">
+            {{ error }}
+        </p>
+        {% endfor %}
+      </div>
+
+      <div class="field">
+        <label for="d" class="label">Answer D</label>
+        <div class="control">
+          {{ form.d(required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.d.errors %}
+        <p class="help has-background-warning">
+            {{ error }}
+        </p>
+        {% endfor %}
+      </div>
+
+      <div class="field">
+        <label for="e" class="label">Answer E</label>
+        <div class="control">
+          {{ form.e(required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.e.errors %}
+        <p class="help has-background-warning">
+            {{ error }}
+        </p>
+        {% endfor %}
+      </div>
+
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-primary is-small">Save</button>
+        </div>
+      </div>
+    </form>
+{% endblock %}

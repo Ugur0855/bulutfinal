@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>My movies - {% block title %}{% endblock %}</title>
+        <title>Online Exam System - {% block title %}{% endblock %}</title>
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css"/>
         <link rel="stylesheet"
-            href="{{ url_for('static', filename='mymovies.css') }}"/>
+            href="{{ url_for('static', filename='myexams.css') }}"/>
     </head>
 
     <body>
@@ -18,23 +18,26 @@
                     <a class="button is-link" href="{{ url_for('home_page') }}">Home</a>
                   </span>
                   <span class="navbar-item">
-                    <a class="button is-link" href="{{ url_for('movies_page') }}">List movies</a>
+                    <a class="button is-link" href="{{ url_for('exams_page') }}">List exams</a>
                   </span>
                   {% if current_user.is_admin %}
                   <span class="navbar-item">
-                    <a class="button is-link" href="{{ url_for('movie_add_page') }}">Add movie</a>
+                    <a class="button is-link" href="{{ url_for('exam_add_page') }}">Add exam</a>
                   </span>
                   {% endif %}
                   <span class="navbar-item">
                   {% if not current_user.is_authenticated %}
+                    Giriş yapmak için -->
                     <a class="button is-link" href="{{ url_for('login_page') }}">Log in</a>
                   {% else %}
                     {{ current_user.username }} olarak giris yapildi.
+                    Çıkış yapmak için -->
                     <a class="button is-link" href="{{ url_for('logout_page') }}">Log out</a>
                   {% endif %}
                   </span>
                 </div>
             </nav>
+            <p class="subtitle">System Time: {{ date }}-{{ day_name }}-{{ time }}</p>
         </header>
 
         <main>
@@ -47,7 +50,7 @@
 
         <footer class="footer">
             <div class="content">
-                <small>&copy; 2015-2018, Kilgore Trout</small>
+                <small>&copy; 2021-2022, Uğur Karamollaoğlu-05180000770</small>
             </div>
         </footer>
     </body>

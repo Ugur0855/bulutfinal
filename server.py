@@ -4,7 +4,7 @@ from flask_login import LoginManager
 import views
 import os
 from database import Database
-from movie import Movie
+from exam import Exam
 from user import get_user
 
 
@@ -23,10 +23,10 @@ def create_app():
 
     app.add_url_rule("/login", view_func=views.login_page, methods=["GET", "POST"])
     app.add_url_rule("/logout", view_func=views.logout_page)
-    app.add_url_rule("/movies", view_func=views.movies_page, methods=["GET", "POST"])
-    app.add_url_rule("/movies/<int:movie_key>", view_func=views.movie_page)
-    app.add_url_rule("/movies/<int:movie_key>/edit",view_func=views.movie_edit_page,methods=["GET", "POST"],)
-    app.add_url_rule("/new-movie", view_func=views.movie_add_page, methods=["GET", "POST"])
+    app.add_url_rule("/exams", view_func=views.exams_page, methods=["GET", "POST"])
+    app.add_url_rule("/exams/<int:exam_key>", view_func=views.exam_page)
+    app.add_url_rule("/exams/<int:exam_key>/edit",view_func=views.exam_edit_page,methods=["GET", "POST"],)
+    app.add_url_rule("/new-exam", view_func=views.exam_add_page, methods=["GET", "POST"])
 
     lm.init_app(app)
     lm.login_view = "login_page"
@@ -42,9 +42,7 @@ def create_app():
     return app  
     '''
 
-    #'C:\\Users\\ugur_\\movies.db'
-    home_dir = os.path.expanduser("~")
-    db = Database("C:\\Users\\ugur_\\movies.db")
+    db = Database("D:\\Bilgisayar\\bulutfinal\\exams.db")
     app.config["db"] = db
     return app
 

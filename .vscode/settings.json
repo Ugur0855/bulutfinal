@@ -19,8 +19,14 @@
         {
             "previewLimit": 50,
             "driver": "SQLite",
-            "name": "test",
-            "database": "C:\\Users\\ugur_\\movies.sqlite"
+            "name": "movietest",
+            "database": "D:\\Bilgisayar\\iturestapp\\movies.db"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "examtest",
+            "database": "${workspaceFolder:bulutfinal}/exams.db"
         }
     ],
     "sqltools.useNodeRuntime": true,

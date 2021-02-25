@@ -5,8 +5,9 @@ from wtforms_components import IntegerField
 
 from datetime import datetime
 
-
-class MovieEditForm(FlaskForm):
+#examno, examname, numberofquestions, question, a, b, c, d, e
+class ExamEditForm(FlaskForm):
+    '''
     title = StringField("Title", validators=[DataRequired()])
 
     year = IntegerField(
@@ -14,6 +15,22 @@ class MovieEditForm(FlaskForm):
         validators=[
             Optional(),
             NumberRange(min=1887, max=datetime.now().year),
+        ],
+    )
+    '''
+    examname = StringField("Examname", validators=[DataRequired()])
+    question = StringField("Question", validators=[DataRequired()])
+    a = StringField("a", validators=[DataRequired()])
+    b = StringField("b", validators=[DataRequired()])
+    c = StringField("c", validators=[DataRequired()])
+    d = StringField("d", validators=[DataRequired()])
+    e = StringField("e", validators=[DataRequired()])
+
+    numberofquestions = IntegerField(
+        "Numberofquestions",
+        validators=[
+            Optional(),
+            NumberRange(min=1, max=10),
         ],
     )
 
