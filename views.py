@@ -108,7 +108,7 @@ def exam_edit_page(exam_key):
         b = form.data["b"]
         c = form.data["c"]
         d = form.data["d"]
-        e = form.data["r"]
+        e = form.data["e"]
         exam = Exam(examname, numberofquestions, question, a, b, c, d, e)
         db.update_exam(exam_key, exam)
         flash("Exam updated.")
